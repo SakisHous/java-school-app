@@ -36,8 +36,8 @@ public class DateUtil {
      * java.util.Date class.
      *
      * @param dateStr date in String format.
-     * @throws ParseException
      * @return a Date object of java.util.Date class.
+     * @throws ParseException
      */
     public static Date toDate(String dateStr) throws ParseException {
         return getDateFormat().parse(dateStr);

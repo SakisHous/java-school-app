@@ -18,7 +18,8 @@ public class DBHelper {
     /**
      * Private constructor. No instances of this class should not be allowed.
      */
-    private DBHelper() { }
+    private DBHelper() {
+    }
 
     public static void eraseData() throws SQLException {
         Connection conn = null;

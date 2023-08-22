@@ -4,7 +4,6 @@ import gr.aueb.cf.schoolappsoa.dao.exceptions.SpecialityDAOException;
 import gr.aueb.cf.schoolappsoa.model.Speciality;
 import gr.aueb.cf.schoolappsoa.service.util.DBUtil;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,11 +22,10 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
     /**
      * This method inserts a new record in the Specialities table.
      *
-     * @param speciality         the {@link Speciality} object of the model to be inserted.
-     * @return                  the inserted {@link Speciality} object.
-     * @throws SpecialityDAOException
-     *                          if an error is occurred, this wrapper
-     *                          exception to {@link SQLException} will be thrown.
+     * @param speciality the {@link Speciality} object of the model to be inserted.
+     * @return the inserted {@link Speciality} object.
+     * @throws SpecialityDAOException if an error is occurred, this wrapper
+     *                                exception to {@link SQLException} will be thrown.
      */
     @Override
     public Speciality insert(Speciality speciality) throws SpecialityDAOException {
@@ -52,11 +50,10 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
      * This method updates a old record of the Speciality table with
      * a new one.
      *
-     * @param speciality         the {@link Speciality} object of the model to be updated.
-     * @return                  the inserted {@link Speciality} object.
-     * @throws SpecialityDAOException
-     *                          if an error is occurred, this wrapper
-     *                          exception to {@link SQLException} will be thrown.
+     * @param speciality the {@link Speciality} object of the model to be updated.
+     * @return the inserted {@link Speciality} object.
+     * @throws SpecialityDAOException if an error is occurred, this wrapper
+     *                                exception to {@link SQLException} will be thrown.
      */
     @Override
     public Speciality update(Speciality speciality) throws SpecialityDAOException {
@@ -83,10 +80,9 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
      * This method deletes a record from Speciality table, given by
      * the client.
      *
-     * @param id                the id provided by the client.
-     * @throws SpecialityDAOException
-     *                          if an error is occurred, this wrapper
-     *                          exception to {@link SQLException} will be thrown.
+     * @param id the id provided by the client.
+     * @throws SpecialityDAOException if an error is occurred, this wrapper
+     *                                exception to {@link SQLException} will be thrown.
      */
     @Override
     public void delete(Long id) throws SpecialityDAOException {
@@ -110,10 +106,9 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
      * This method returns all the records from the
      * Specialities table.
      *
-     * @return                  an {@link ArrayList} with {@link Speciality} objects.
-     * @throws SpecialityDAOException
-     *                          if an error is occurred, this wrapper
-     *                          exception to {@link SQLException} will be thrown.
+     * @return an {@link ArrayList} with {@link Speciality} objects.
+     * @throws SpecialityDAOException if an error is occurred, this wrapper
+     *                                exception to {@link SQLException} will be thrown.
      */
     @Override
     public List<Speciality> getAllSpecialty() throws SpecialityDAOException {
@@ -151,11 +146,10 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
      * This methods finds and returns a certain record from
      * Specialities table with the given id.
      *
-     * @param id                the id given by the client.
-     * @return                  an {@link Speciality} object.
-     * @throws SpecialityDAOException
-     *                          if an error is occurred, this wrapper
-     *                          exception to {@link SQLException} will be thrown.
+     * @param id the id given by the client.
+     * @return an {@link Speciality} object.
+     * @throws SpecialityDAOException if an error is occurred, this wrapper
+     *                                exception to {@link SQLException} will be thrown.
      */
     @Override
     public Speciality getById(Long id) throws SpecialityDAOException {

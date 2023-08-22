@@ -38,8 +38,7 @@ public class StudentServiceImpl implements IStudentService {
      * @param cityDAO    an implementation of {@link ICityDAO} interface.
      * @param userDAO    an implementation of {@link IUserDAO} interface.
      */
-    public StudentServiceImpl(IStudentDAO studentDAO, ICityDAO cityDAO, IUserDAO userDAO)
-    {
+    public StudentServiceImpl(IStudentDAO studentDAO, ICityDAO cityDAO, IUserDAO userDAO) {
         this.studentDAO = studentDAO;
         this.cityDAO = cityDAO;
         this.userDAO = userDAO;
@@ -58,8 +57,7 @@ public class StudentServiceImpl implements IStudentService {
      *                             related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public Student insertStudent(StudentInsertDTO dto) throws StudentDAOException, CityDAOException, UserDAOException
-    {
+    public Student insertStudent(StudentInsertDTO dto) throws StudentDAOException, CityDAOException, UserDAOException {
         Student student = map(dto);
 
         return studentDAO.insert(student);
@@ -80,8 +78,7 @@ public class StudentServiceImpl implements IStudentService {
      *                                  related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public Student updateStudent(StudentUpdateDTO dto) throws StudentDAOException, StudentNotFoundException, CityDAOException, UserDAOException
-    {
+    public Student updateStudent(StudentUpdateDTO dto) throws StudentDAOException, StudentNotFoundException, CityDAOException, UserDAOException {
         Student student = map(dto);
 
         if (studentDAO.getById(student.getId()) == null) {
@@ -108,8 +105,7 @@ public class StudentServiceImpl implements IStudentService {
      *                                  related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public boolean deleteStudent(long id) throws StudentDAOException, StudentNotFoundException, CityDAOException, UserDAOException
-    {
+    public boolean deleteStudent(long id) throws StudentDAOException, StudentNotFoundException, CityDAOException, UserDAOException {
         Student student;
         boolean studentIsDeleted = false;
 
@@ -140,8 +136,7 @@ public class StudentServiceImpl implements IStudentService {
      *                             related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public List<Student> getStudentByLastname(String lastname) throws StudentDAOException, CityDAOException, UserDAOException
-    {
+    public List<Student> getStudentByLastname(String lastname) throws StudentDAOException, CityDAOException, UserDAOException {
         return studentDAO.getByLastname(lastname);
     }
 
@@ -158,8 +153,7 @@ public class StudentServiceImpl implements IStudentService {
      *                             related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public Student getStudentById(long id) throws StudentDAOException, CityDAOException, UserDAOException
-    {
+    public Student getStudentById(long id) throws StudentDAOException, CityDAOException, UserDAOException {
         return studentDAO.getById(id);
     }
 
@@ -174,8 +168,7 @@ public class StudentServiceImpl implements IStudentService {
      * @throws UserDAOException handles errors propagated from DAO layer
      *                          related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
-    private Student map(StudentInsertDTO dto) throws CityDAOException, UserDAOException
-    {
+    private Student map(StudentInsertDTO dto) throws CityDAOException, UserDAOException {
         // converts java.util.Date to java.sql.Date
         java.sql.Date sqlBirthDate = DateUtil.toSQLDate(dto.getBirthDate());
 
@@ -197,8 +190,7 @@ public class StudentServiceImpl implements IStudentService {
      * @throws UserDAOException handles errors propagated from DAO layer
      *                          related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
-    private Student map(StudentUpdateDTO dto) throws CityDAOException, UserDAOException
-    {
+    private Student map(StudentUpdateDTO dto) throws CityDAOException, UserDAOException {
         // converts java.util.Date to java.sql.Date
         java.sql.Date sqlBirthDate = DateUtil.toSQLDate(dto.getBirthDate());
 

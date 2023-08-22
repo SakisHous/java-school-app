@@ -8,7 +8,6 @@ import gr.aueb.cf.schoolappsoa.model.Student;
 import gr.aueb.cf.schoolappsoa.model.User;
 import gr.aueb.cf.schoolappsoa.service.util.DBUtil;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,17 +22,16 @@ import java.util.List;
  * @author Thanasis Chousiadas
  */
 public class StudentDAOImpl implements IStudentDAO {
-    private ICityDAO cityDAO = new CityDAOImpl();
-    private IUserDAO userDAO = new UserDAOImpl();
+    private final ICityDAO cityDAO = new CityDAOImpl();
+    private final IUserDAO userDAO = new UserDAOImpl();
 
     /**
      * This method inserts a new record in the Students table.
      *
-     * @param student           the {@link Student} object of the model to be inserted.
-     * @return                  the inserted {@link Student} object.
-     * @throws StudentDAOException
-     *                          if an error is occurred, this wrapper
-     *                          exception to {@link SQLException} will be thrown.
+     * @param student the {@link Student} object of the model to be inserted.
+     * @return the inserted {@link Student} object.
+     * @throws StudentDAOException if an error is occurred, this wrapper
+     *                             exception to {@link SQLException} will be thrown.
      */
     @Override
     public Student insert(Student student) throws StudentDAOException {
@@ -64,11 +62,10 @@ public class StudentDAOImpl implements IStudentDAO {
      * This method updates an old record in the Students table
      * with a new one.
      *
-     * @param student           the {@link Student} object.
-     * @return                  the updated {@link Student} object.
-     * @throws StudentDAOException
-     *                          if an error is occurred, this wrapper
-     *                          exception to {@link SQLException} will be thrown.
+     * @param student the {@link Student} object.
+     * @return the updated {@link Student} object.
+     * @throws StudentDAOException if an error is occurred, this wrapper
+     *                             exception to {@link SQLException} will be thrown.
      */
     @Override
     public Student update(Student student) throws StudentDAOException {
@@ -100,12 +97,11 @@ public class StudentDAOImpl implements IStudentDAO {
      * This method deletes a record from Students table with an id given by
      * the client.
      *
-     * @param id            the primary key of the record.
-     * @return              true if the row is deleted successfully,
-     *                      otherwise false.
-     * @throws StudentDAOException
-     *                      if an error is occurred, this wrapper
-     *                      exception to {@link SQLException} will be thrown.
+     * @param id the primary key of the record.
+     * @return true if the row is deleted successfully,
+     * otherwise false.
+     * @throws StudentDAOException if an error is occurred, this wrapper
+     *                             exception to {@link SQLException} will be thrown.
      */
     @Override
     public boolean delete(long id) throws StudentDAOException {
@@ -123,7 +119,7 @@ public class StudentDAOImpl implements IStudentDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new StudentDAOException("SQL Error: User delete with id = "+ id);
+            throw new StudentDAOException("SQL Error: User delete with id = " + id);
         }
         return studentIsDeleted;
     }
@@ -133,21 +129,18 @@ public class StudentDAOImpl implements IStudentDAO {
      * of the Students table where lastname begins with the lastname
      * provided by the client.
      *
-     * @param lastname          the lastname for searching given by the client.
-     * @return                  an {@link ArrayList} of {@link Student} objects where
-     *                          their lastname field begins with the lastname parameter
-     *                          given by the client.
-     * @throws StudentDAOException
-     *                          for errors that occur during records retrieval
-     *                          from Students table.
-     * @throws CityDAOException
-     *                          for errors that occur during records retrieval
-     *                          from Cities table. Students table has foreign key
-     *                          with Cities table.
-     * @throws UserDAOException
-     *                          for errors that occur during records retrieval
-     *                          from Users table. Students table has foreign key
-     *                          with Users table.
+     * @param lastname the lastname for searching given by the client.
+     * @return an {@link ArrayList} of {@link Student} objects where
+     * their lastname field begins with the lastname parameter
+     * given by the client.
+     * @throws StudentDAOException for errors that occur during records retrieval
+     *                             from Students table.
+     * @throws CityDAOException    for errors that occur during records retrieval
+     *                             from Cities table. Students table has foreign key
+     *                             with Cities table.
+     * @throws UserDAOException    for errors that occur during records retrieval
+     *                             from Users table. Students table has foreign key
+     *                             with Users table.
      */
     @Override
     public List<Student> getByLastname(String lastname) throws StudentDAOException, CityDAOException, UserDAOException {
@@ -193,19 +186,16 @@ public class StudentDAOImpl implements IStudentDAO {
      * This method returns the record where the primary key is
      * same with the id given by the client.
      *
-     * @param id                the id provided by the client.
-     * @return                  a {@link Student} with the id.
-     * @throws StudentDAOException
-     *                          for errors that occur during records retrieval
-     *                          from Students table.
-     * @throws CityDAOException
-     *                          for errors that occur during records retrieval
-     *                          from Cities table. Students table has foreign key
-     *                          with Cities table.
-     * @throws UserDAOException
-     *                          for errors that occur during records retrieval
-     *                          from Users table. Students table has foreign key
-     *                          with Users table.
+     * @param id the id provided by the client.
+     * @return a {@link Student} with the id.
+     * @throws StudentDAOException for errors that occur during records retrieval
+     *                             from Students table.
+     * @throws CityDAOException    for errors that occur during records retrieval
+     *                             from Cities table. Students table has foreign key
+     *                             with Cities table.
+     * @throws UserDAOException    for errors that occur during records retrieval
+     *                             from Users table. Students table has foreign key
+     *                             with Users table.
      */
     @Override
     public Student getById(long id) throws StudentDAOException, CityDAOException, UserDAOException {
@@ -252,21 +242,18 @@ public class StudentDAOImpl implements IStudentDAO {
      * the foreign key user_id is the same with the id given by the client
      * and returns this record.
      *
-     * @param id            the id given by the client.
-     * @return              a {@link Student} object with the foreign key
-     *                      the same with the id. Each student has a
-     *                      unique user id.
-     * @throws StudentDAOException
-     *                      for errors that occur during records retrieval
-     *                      from Students table.
-     * @throws CityDAOException
-     *                      for errors that occur during records retrieval
-     *                      from Cities table. Students table has foreign key
-     *                      with Cities table.
-     * @throws UserDAOException
-     *                      for errors that occur during records retrieval
-     *                      from Users table. Students table has foreign key
-     *                      with Users table.
+     * @param id the id given by the client.
+     * @return a {@link Student} object with the foreign key
+     * the same with the id. Each student has a
+     * unique user id.
+     * @throws StudentDAOException for errors that occur during records retrieval
+     *                             from Students table.
+     * @throws CityDAOException    for errors that occur during records retrieval
+     *                             from Cities table. Students table has foreign key
+     *                             with Cities table.
+     * @throws UserDAOException    for errors that occur during records retrieval
+     *                             from Users table. Students table has foreign key
+     *                             with Users table.
      */
     @Override
     public Student getByUserId(long id) throws StudentDAOException, CityDAOException, UserDAOException {

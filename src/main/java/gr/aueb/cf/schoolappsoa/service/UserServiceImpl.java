@@ -38,8 +38,7 @@ public class UserServiceImpl implements IUserService {
      * @param studentDAO an implementation of {@link IStudentDAO} interface.
      * @param teacherDAO an implementation of {@link ITeacherDAO} interface.
      */
-    public UserServiceImpl(IUserDAO userDAO, IStudentDAO studentDAO, ITeacherDAO teacherDAO)
-    {
+    public UserServiceImpl(IUserDAO userDAO, IStudentDAO studentDAO, ITeacherDAO teacherDAO) {
         this.userDAO = userDAO;
         this.studentDAO = studentDAO;
         this.teacherDAO = teacherDAO;
@@ -56,8 +55,7 @@ public class UserServiceImpl implements IUserService {
      *                                    related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public User insertUser(UserInsertDTO dto) throws UserAlreadyExistsException, UserDAOException
-    {
+    public User insertUser(UserInsertDTO dto) throws UserAlreadyExistsException, UserDAOException {
         User user;
         user = map(dto);
 
@@ -80,8 +78,7 @@ public class UserServiceImpl implements IUserService {
      *                               related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public User updateUser(UserUpdateDTO dto) throws UserNotFoundException, UserDAOException
-    {
+    public User updateUser(UserUpdateDTO dto) throws UserNotFoundException, UserDAOException {
         User user;
         user = map(dto);
 
@@ -112,8 +109,7 @@ public class UserServiceImpl implements IUserService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public void deleteUser(long id) throws UserNotFoundException, UserDAOException, StudentDAOException, CityDAOException, TeacherDAOException, SpecialityDAOException
-    {
+    public void deleteUser(long id) throws UserNotFoundException, UserDAOException, StudentDAOException, CityDAOException, TeacherDAOException, SpecialityDAOException {
         User user;
         user = userDAO.getById(id);
 
@@ -147,8 +143,7 @@ public class UserServiceImpl implements IUserService {
      *                          related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public User getUserByUsername(String username) throws UserDAOException
-    {
+    public User getUserByUsername(String username) throws UserDAOException {
         return userDAO.getByUsername(username);
     }
 
@@ -180,8 +175,7 @@ public class UserServiceImpl implements IUserService {
      *                          related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public List<User> getAllUsers() throws UserDAOException
-    {
+    public List<User> getAllUsers() throws UserDAOException {
         return userDAO.getAll();
     }
 
@@ -195,8 +189,7 @@ public class UserServiceImpl implements IUserService {
      *                          related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public List<User> getUsersByUsernameLike(String username) throws UserDAOException
-    {
+    public List<User> getUsersByUsernameLike(String username) throws UserDAOException {
         return userDAO.getByUsernameLike(username);
     }
 
@@ -231,8 +224,7 @@ public class UserServiceImpl implements IUserService {
      * @param dto a {@link UserInsertDTO} object.
      * @return a {@link User} object.
      */
-    private User map(UserInsertDTO dto)
-    {
+    private User map(UserInsertDTO dto) {
         String hashedPasswd = SecUtil.hashPassword(dto.getPassword());
         return new User(null, dto.getUsername(), hashedPasswd);
     }
@@ -244,8 +236,7 @@ public class UserServiceImpl implements IUserService {
      * @param dto a {@link UserUpdateDTO} object.
      * @return a {@link User} object.
      */
-    private User map(UserUpdateDTO dto)
-    {
+    private User map(UserUpdateDTO dto) {
         return new User(dto.getId(), dto.getUsername(), dto.getPassword());
     }
 }

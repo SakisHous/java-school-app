@@ -41,8 +41,7 @@ public class CityServiceImpl implements ICityService {
      *                                    already exists.
      */
     @Override
-    public City insertCity(CityInsertDTO dto) throws CityDAOException, CityAlreadyExistsException
-    {
+    public City insertCity(CityInsertDTO dto) throws CityDAOException, CityAlreadyExistsException {
         City city = map(dto);
 
         // checks if the city is already exists
@@ -65,8 +64,7 @@ public class CityServiceImpl implements ICityService {
      *                               does not exist.
      */
     @Override
-    public City updateCity(CityUpdateDTO dto) throws CityDAOException, CityNotFoundException
-    {
+    public City updateCity(CityUpdateDTO dto) throws CityDAOException, CityNotFoundException {
         City city = map(dto);
 
         if (cityDAO.getById(city.getId()) == null) {
@@ -85,8 +83,7 @@ public class CityServiceImpl implements ICityService {
      *                               does not exist.
      */
     @Override
-    public void deleteCity(long id) throws CityDAOException, CityNotFoundException
-    {
+    public void deleteCity(long id) throws CityDAOException, CityNotFoundException {
         City city = cityDAO.getById(id);
 
         if (city == null) {
@@ -103,8 +100,7 @@ public class CityServiceImpl implements ICityService {
      * @throws CityDAOException handles errors propagated from DAO layer.
      */
     @Override
-    public List<City> getAllCities() throws CityDAOException
-    {
+    public List<City> getAllCities() throws CityDAOException {
         return cityDAO.getAllCities();
     }
 
@@ -119,8 +115,7 @@ public class CityServiceImpl implements ICityService {
      *                               exception.
      */
     @Override
-    public City getCityById(long id) throws CityDAOException, CityNotFoundException
-    {
+    public City getCityById(long id) throws CityDAOException, CityNotFoundException {
         City city = cityDAO.getById(id);
 
         if (city == null) {

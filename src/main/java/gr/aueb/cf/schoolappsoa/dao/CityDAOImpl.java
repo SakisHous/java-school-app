@@ -194,7 +194,7 @@ public class CityDAOImpl implements ICityDAO {
             }
 
             return new City(rs.getLong("ID"), rs.getString("CITY"));
-        } catch(SQLException e1) {
+        } catch (SQLException e1) {
             e1.printStackTrace();
             throw new CityDAOException("SQL Error in Cities: Query City by name.");
         } finally {

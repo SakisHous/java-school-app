@@ -34,12 +34,11 @@ public class TeacherServiceImpl implements ITeacherService {
      * Dependencies injection of {@link ITeacherDAO}, {@link ICityDAO} and {@link IUserDAO} type
      * implementations in Data Access Object Layer.
      *
-     * @param teacherDAO   an implementation of {@link ITeacherDAO} interface.
+     * @param teacherDAO    an implementation of {@link ITeacherDAO} interface.
      * @param specialityDAO an implementation of {@link ISpecialityDAO} interface.
-     * @param userDAO      an implementation of {@link IUserDAO} interface.
+     * @param userDAO       an implementation of {@link IUserDAO} interface.
      */
-    public TeacherServiceImpl(ITeacherDAO teacherDAO, ISpecialityDAO specialityDAO, IUserDAO userDAO)
-    {
+    public TeacherServiceImpl(ITeacherDAO teacherDAO, ISpecialityDAO specialityDAO, IUserDAO userDAO) {
         this.teacherDAO = teacherDAO;
         this.specialityDAO = specialityDAO;
         this.userDAO = userDAO;
@@ -58,8 +57,7 @@ public class TeacherServiceImpl implements ITeacherService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public Teacher insertTeacher(TeacherInsertDTO dto) throws TeacherDAOException, UserDAOException, SpecialityDAOException
-    {
+    public Teacher insertTeacher(TeacherInsertDTO dto) throws TeacherDAOException, UserDAOException, SpecialityDAOException {
         Teacher teacher = map(dto);
 
         return teacherDAO.insert(teacher);
@@ -80,8 +78,7 @@ public class TeacherServiceImpl implements ITeacherService {
      *                                  related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public Teacher updateTeacher(TeacherUpdateDTO dto) throws TeacherDAOException, TeacherNotFoundException, UserDAOException, SpecialityDAOException
-    {
+    public Teacher updateTeacher(TeacherUpdateDTO dto) throws TeacherDAOException, TeacherNotFoundException, UserDAOException, SpecialityDAOException {
         Teacher teacher = map(dto);
 
         if (teacherDAO.getById(teacher.getId()) == null) {
@@ -108,8 +105,7 @@ public class TeacherServiceImpl implements ITeacherService {
      *                                  related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
     @Override
-    public boolean deleteTeacher(long id) throws TeacherDAOException, TeacherNotFoundException, SpecialityDAOException, UserDAOException
-    {
+    public boolean deleteTeacher(long id) throws TeacherDAOException, TeacherNotFoundException, SpecialityDAOException, UserDAOException {
         Teacher teacher;
         boolean teacherIsDeleted = false;
 
@@ -138,8 +134,7 @@ public class TeacherServiceImpl implements ITeacherService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public List<Teacher> getTeacherByLastname(String lastname) throws TeacherDAOException, UserDAOException, SpecialityDAOException
-    {
+    public List<Teacher> getTeacherByLastname(String lastname) throws TeacherDAOException, UserDAOException, SpecialityDAOException {
         return teacherDAO.getByLastname(lastname);
     }
 
@@ -156,8 +151,7 @@ public class TeacherServiceImpl implements ITeacherService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public Teacher getTeacherById(long id) throws TeacherDAOException, UserDAOException, SpecialityDAOException
-    {
+    public Teacher getTeacherById(long id) throws TeacherDAOException, UserDAOException, SpecialityDAOException {
         return teacherDAO.getById(id);
     }
 
@@ -172,8 +166,7 @@ public class TeacherServiceImpl implements ITeacherService {
      * @throws SpecialityDAOException handles errors propagated from DAO layer
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
-    private Teacher map(TeacherInsertDTO dto) throws UserDAOException, SpecialityDAOException
-    {
+    private Teacher map(TeacherInsertDTO dto) throws UserDAOException, SpecialityDAOException {
         Speciality speciality;
         User user;
 
@@ -194,8 +187,7 @@ public class TeacherServiceImpl implements ITeacherService {
      * @throws SpecialityDAOException handles errors propagated from DAO layer
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.UserDAOImpl}.
      */
-    private Teacher map(TeacherUpdateDTO dto) throws UserDAOException, SpecialityDAOException
-    {
+    private Teacher map(TeacherUpdateDTO dto) throws UserDAOException, SpecialityDAOException {
         Speciality speciality;
         User user;
 

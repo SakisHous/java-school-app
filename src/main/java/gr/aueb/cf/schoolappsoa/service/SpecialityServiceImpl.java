@@ -40,8 +40,7 @@ public class SpecialityServiceImpl implements ISpecialityService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public Speciality insertSpecialty(SpecialityInsertDTO dto) throws SpecialityDAOException
-    {
+    public Speciality insertSpecialty(SpecialityInsertDTO dto) throws SpecialityDAOException {
         Speciality speciality = map(dto);
 
         return specialtyDAO.insert(speciality);
@@ -58,8 +57,7 @@ public class SpecialityServiceImpl implements ISpecialityService {
      *                                     does not exist.
      */
     @Override
-    public Speciality updateSpecialty(SpecialityUpdateDTO dto) throws SpecialityDAOException, SpecialityNotFoundException
-    {
+    public Speciality updateSpecialty(SpecialityUpdateDTO dto) throws SpecialityDAOException, SpecialityNotFoundException {
         Speciality speciality = map(dto);
 
         if (specialtyDAO.getById(speciality.getId()) == null) {
@@ -80,8 +78,7 @@ public class SpecialityServiceImpl implements ISpecialityService {
      *                                     does not exist.
      */
     @Override
-    public void deleteSpecialty(long id) throws SpecialityDAOException, SpecialityNotFoundException
-    {
+    public void deleteSpecialty(long id) throws SpecialityDAOException, SpecialityNotFoundException {
         Speciality speciality = specialtyDAO.getById(id);
 
         if (speciality == null) {
@@ -101,8 +98,7 @@ public class SpecialityServiceImpl implements ISpecialityService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public List<Speciality> getAllSpecialties() throws SpecialityDAOException
-    {
+    public List<Speciality> getAllSpecialties() throws SpecialityDAOException {
         return specialtyDAO.getAllSpecialty();
     }
 
@@ -115,8 +111,7 @@ public class SpecialityServiceImpl implements ISpecialityService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public Speciality getSpecialtyById(long id) throws SpecialityDAOException
-    {
+    public Speciality getSpecialtyById(long id) throws SpecialityDAOException {
         return specialtyDAO.getById(id);
     }
 
