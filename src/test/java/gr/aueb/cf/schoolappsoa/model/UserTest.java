@@ -4,11 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UserTest
-{
+public class UserTest {
     @Test
-    void gettersSetters()
-    {
+    void gettersSetters() {
         User user = new User();
         user.setId(1L);
         user.setUsername("user-01");
@@ -20,8 +18,7 @@ public class UserTest
     }
 
     @Test
-    void overloadedConstructor()
-    {
+    void overloadedConstructor() {
         User user = new User(1L, "user-01", "123456abc");
 
         assertEquals(user.getId(), 1L);
