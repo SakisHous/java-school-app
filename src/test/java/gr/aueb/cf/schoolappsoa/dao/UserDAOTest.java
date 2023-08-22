@@ -96,27 +96,31 @@ public class UserDAOTest
     }
 
     @Test
-    void getById() throws UserDAOException {
+    void getById() throws UserDAOException
+    {
         User user = userDAO.getById(1L);
 
         assertEquals(user.getUsername(), "sakis-01");
     }
 
     @Test
-    void getByUsername() throws UserDAOException {
+    void getByUsername() throws UserDAOException
+    {
         User user = userDAO.getByUsername("sakis-01");
 
         assertEquals(user.getId(), 1);
     }
 
     @Test
-    void getByUsernameLike() throws UserDAOException {
+    void getByUsernameLike() throws UserDAOException
+    {
         List<User> users = userDAO.getByUsernameLike("sakis");
 
         assertEquals(users.size(), 4);
     }
 
-    public static void createDummyUsers() throws UserDAOException {
+    public static void createDummyUsers() throws UserDAOException
+    {
         User user = new User();
         user.setUsername("sakis-01");
         user.setPassword("123456");
