@@ -4,7 +4,6 @@ import gr.aueb.cf.schoolappsoa.dao.exceptions.CityDAOException;
 import gr.aueb.cf.schoolappsoa.model.City;
 import gr.aueb.cf.schoolappsoa.service.util.DBUtil;
 
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -170,9 +169,41 @@ public class CityDAOImpl implements ICityDAO {
             throw new CityDAOException("SQL Error in City with id = " + id);
         } finally {
             try {
-                if (rs != null) rs.close();
+                if (rs != null) {
+                    rs.close();
+                }
             } catch (SQLException e1) {
                 e1.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public City getByName(String name) throws CityDAOException {
+        String sql = "SELECT * FROM CITIES WHERE CITY = ?";
+        ResultSet rs = null;
+
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)
+        ) {
+            ps.setString(1, name);
+            rs = ps.executeQuery();
+
+            if (!rs.next()) {
+                return null;
+            }
+
+            return new City(rs.getLong("ID"), rs.getString("CITY"));
+        } catch(SQLException e1) {
+            e1.printStackTrace();
+            throw new CityDAOException("SQL Error in Cities: Query City by name.");
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (SQLException e2) {
+                e2.printStackTrace();
             }
         }
     }

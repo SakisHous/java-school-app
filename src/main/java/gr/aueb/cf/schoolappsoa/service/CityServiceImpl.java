@@ -43,16 +43,15 @@ public class CityServiceImpl implements ICityService {
     @Override
     public City insertCity(CityInsertDTO dto) throws CityDAOException, CityAlreadyExistsException
     {
-        List<City> cities;
         City city = map(dto);
 
         // checks if the city is already exists
-        cities = cityDAO.getAllCities();
-        for (City ct : cities) {
-            if (ct.getCity().equals(city.getCity())) {
-                throw new CityAlreadyExistsException(city);
-            }
+        City storedCity = cityDAO.getByName(city.getCity());
+
+        if (storedCity != null) {
+            throw new CityAlreadyExistsException(city);
         }
+
         return cityDAO.insert(city);
     }
 
