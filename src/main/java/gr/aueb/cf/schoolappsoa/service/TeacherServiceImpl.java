@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class TeacherServiceImpl implements ITeacherService {
     private final ITeacherDAO teacherDAO;
-    private final ISpecialityDAO specialtyDAO;
+    private final ISpecialityDAO specialityDAO;
     private final IUserDAO userDAO;
 
     /**
@@ -35,13 +35,13 @@ public class TeacherServiceImpl implements ITeacherService {
      * implementations in Data Access Object Layer.
      *
      * @param teacherDAO   an implementation of {@link ITeacherDAO} interface.
-     * @param specialtyDAO an implementation of {@link ISpecialityDAO} interface.
+     * @param specialityDAO an implementation of {@link ISpecialityDAO} interface.
      * @param userDAO      an implementation of {@link IUserDAO} interface.
      */
-    public TeacherServiceImpl(ITeacherDAO teacherDAO, ISpecialityDAO specialtyDAO, IUserDAO userDAO)
+    public TeacherServiceImpl(ITeacherDAO teacherDAO, ISpecialityDAO specialityDAO, IUserDAO userDAO)
     {
         this.teacherDAO = teacherDAO;
-        this.specialtyDAO = specialtyDAO;
+        this.specialityDAO = specialityDAO;
         this.userDAO = userDAO;
     }
 
@@ -177,7 +177,7 @@ public class TeacherServiceImpl implements ITeacherService {
         Speciality speciality;
         User user;
 
-        speciality = specialtyDAO.getById(dto.getSpecialityId());
+        speciality = specialityDAO.getById(dto.getSpecialityId());
         user = userDAO.getById(dto.getUserId());
 
         return new Teacher(null, dto.getSsn(), dto.getFirstname(), dto.getLastname(), speciality, user);
@@ -199,7 +199,7 @@ public class TeacherServiceImpl implements ITeacherService {
         Speciality speciality;
         User user;
 
-        speciality = specialtyDAO.getById(dto.getSpecialityId());
+        speciality = specialityDAO.getById(dto.getSpecialityId());
         user = userDAO.getById(dto.getUserId());
 
         return new Teacher(dto.getId(), dto.getSsn(), dto.getFirstname(), dto.getLastname(), speciality, user);
