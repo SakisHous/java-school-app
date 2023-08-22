@@ -23,12 +23,12 @@ public class TeacherUpdateDTO {
     /**
      * Overloaded constructor.
      *
-     * @param id          the id (primary key) is needed for update the record.
-     * @param ssn         the Social Security Number of the teacher.
-     * @param firstname   the firstname of the teacher.
-     * @param lastname    the lastname of the teacher.
-     * @param specialtyId foreign key of the speciality in Specialities table.
-     * @param userId      foreign key of the user in Users table.
+     * @param id           the id (primary key) is needed for update the record.
+     * @param ssn          the Social Security Number of the teacher.
+     * @param firstname    the firstname of the teacher.
+     * @param lastname     the lastname of the teacher.
+     * @param specialityId foreign key of the speciality in Specialities table.
+     * @param userId       foreign key of the user in Users table.
      */
     public TeacherUpdateDTO(
             Long id,
@@ -132,7 +132,7 @@ public class TeacherUpdateDTO {
      * record in Specialities table that Data Transfer
      * Object has to transfer for insert operation.
      *
-     * @param specialtyId the primary key to be incorporated in DTO.
+     * @param specialityId the primary key to be incorporated in DTO.
      */
     public void setSpecialityId(Long specialityId) {
         this.specialityId = specialityId;
