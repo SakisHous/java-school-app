@@ -54,13 +54,13 @@ public class UserDAOTest
     {
         User user = new User();
         user.setId(1L);
-        user.setUsername("Thanasis");
+        user.setUsername("mockUser");
         user.setPassword("abcd123");
         userDAO.update(user);
 
         User modifiedUser = userDAO.getById(1L);
 
-        assertEquals(modifiedUser.getUsername(), "Thanasis");
+        assertEquals(modifiedUser.getUsername(), "mockUser");
     }
 
     @Test
@@ -88,7 +88,7 @@ public class UserDAOTest
     void uniqueUsername()
     {
         User user = new User();
-        user.setUsername("sakis-01");
+        user.setUsername("user-01");
         user.setPassword("123456");
         assertThrows(UserDAOException.class, () -> {
             userDAO.insert(user);
@@ -100,13 +100,13 @@ public class UserDAOTest
     {
         User user = userDAO.getById(1L);
 
-        assertEquals(user.getUsername(), "sakis-01");
+        assertEquals(user.getUsername(), "user-01");
     }
 
     @Test
     void getByUsername() throws UserDAOException
     {
-        User user = userDAO.getByUsername("sakis-01");
+        User user = userDAO.getByUsername("user-01");
 
         assertEquals(user.getId(), 1);
     }
@@ -114,7 +114,7 @@ public class UserDAOTest
     @Test
     void getByUsernameLike() throws UserDAOException
     {
-        List<User> users = userDAO.getByUsernameLike("sakis");
+        List<User> users = userDAO.getByUsernameLike("user");
 
         assertEquals(users.size(), 4);
     }
@@ -122,22 +122,22 @@ public class UserDAOTest
     public static void createDummyUsers() throws UserDAOException
     {
         User user = new User();
-        user.setUsername("sakis-01");
+        user.setUsername("user-01");
         user.setPassword("123456");
         userDAO.insert(user);
 
         user = new User();
-        user.setUsername("sakis-02");
+        user.setUsername("user-02");
         user.setPassword("123456");
         userDAO.insert(user);
 
         user = new User();
-        user.setUsername("sakis-03");
+        user.setUsername("user-03");
         user.setPassword("123456");
         userDAO.insert(user);
 
         user = new User();
-        user.setUsername("sakis-04");
+        user.setUsername("user-04");
         user.setPassword("123456");
         userDAO.insert(user);
     }
