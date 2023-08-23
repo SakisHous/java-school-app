@@ -112,8 +112,8 @@ public class AdminUpdateDeleteTeachersForm extends JFrame {
 					specialitiesModel = new DefaultComboBoxModel<>();
 
 					for (Speciality speciality : specialties) {
-						specialtiesMap.put(speciality.getId(), speciality.getSpecialty());
-						specialitiesModel.addElement(speciality.getSpecialty());
+						specialtiesMap.put(speciality.getId(), speciality.getSpeciality());
+						specialitiesModel.addElement(speciality.getSpeciality());
 					}
 
 					specialityComboBox.setModel(specialitiesModel);
@@ -135,7 +135,7 @@ public class AdminUpdateDeleteTeachersForm extends JFrame {
 
 					// Display the specialty of the current Teacher in the Specialty Combo Box
 					Teacher currentTeacher = teachers.get(listPosition);
-					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpecialty());
+					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpeciality());
 
 					// Display the username of the current Teacher in the Username Combo Box
 					usernameComboBox.setSelectedItem(currentTeacher.getUser().getUsername());
@@ -246,7 +246,7 @@ public class AdminUpdateDeleteTeachersForm extends JFrame {
 					lastnameTxt.setText(teachers.get(listPosition).getLastname());
 					// Display the specialty of the current Teacher in the Specialty Combo Box
 					Teacher currentTeacher = teachers.get(listPosition);
-					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpecialty());
+					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpeciality());
 					// Display the username of the current Teacher in the Username Combo Box
 					usernameComboBox.setSelectedItem(currentTeacher.getUser().getUsername());
 				}
@@ -273,7 +273,7 @@ public class AdminUpdateDeleteTeachersForm extends JFrame {
 					lastnameTxt.setText(teachers.get(listPosition).getLastname());
 					// Display the specialty of the current Teacher in the Specialty Combo Box
 					Teacher currentTeacher = teachers.get(listPosition);
-					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpecialty());
+					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpeciality());
 					// Display the username of the current Teacher in the Username Combo Box
 					usernameComboBox.setSelectedItem(currentTeacher.getUser().getUsername());
 				}
@@ -301,7 +301,7 @@ public class AdminUpdateDeleteTeachersForm extends JFrame {
 					lastnameTxt.setText(teachers.get(listPosition).getLastname());
 					// Display the specialty of the current Teacher in the Specialty Combo Box
 					Teacher currentTeacher = teachers.get(listPosition);
-					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpecialty());
+					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpeciality());
 					// Display the username of the current Teacher in the Username Combo Box
 					usernameComboBox.setSelectedItem(currentTeacher.getUser().getUsername());
 				}
@@ -329,7 +329,7 @@ public class AdminUpdateDeleteTeachersForm extends JFrame {
 					lastnameTxt.setText(teachers.get(listPosition).getLastname());
 					// Display the specialty of the current Teacher in the Specialty Combo Box
 					Teacher currentTeacher = teachers.get(listPosition);
-					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpecialty());
+					specialityComboBox.setSelectedItem(currentTeacher.getTeacherSpeciality().getSpeciality());
 					// Display the username of the current Teacher in the Username Combo Box
 					usernameComboBox.setSelectedItem(currentTeacher.getUser().getUsername());
 				}

@@ -34,7 +34,7 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)
         ) {
-            ps.setString(1, speciality.getSpecialty());
+            ps.setString(1, speciality.getSpeciality());
             int n = ps.executeUpdate();
             if (n == 1) {
                 return speciality;
@@ -42,7 +42,7 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
             return null;
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new SpecialityDAOException("SQL Error in Specialty Insert " + speciality);
+            throw new SpecialityDAOException("SQL Error in Speciality Insert " + speciality);
         }
     }
 
@@ -62,7 +62,7 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)
         ) {
-            ps.setString(1, speciality.getSpecialty());
+            ps.setString(1, speciality.getSpeciality());
             ps.setLong(2, speciality.getId());
 
             int n = ps.executeUpdate();
@@ -72,7 +72,7 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
             return null;
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new SpecialityDAOException("SQL Error in Specialty Update " + speciality);
+            throw new SpecialityDAOException("SQL Error in Speciality Update " + speciality);
         }
     }
 
@@ -98,7 +98,7 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new SpecialityDAOException("SQL Error in Specialty delete with id " + id);
+            throw new SpecialityDAOException("SQL Error in Speciality delete with id " + id);
         }
     }
 
@@ -130,7 +130,7 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
             return specialties;
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new SpecialityDAOException("SQL Error in Specialty, retrieving all specialties");
+            throw new SpecialityDAOException("SQL Error in Speciality, retrieving all specialties");
         } finally {
             try {
                 if (rs != null) {

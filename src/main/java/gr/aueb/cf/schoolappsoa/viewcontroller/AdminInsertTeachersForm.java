@@ -145,8 +145,8 @@ public class AdminInsertTeachersForm extends JFrame {
 					specialitiesModel = new DefaultComboBoxModel<>();
 
 					for (Speciality speciality : specialties) {
-						specialtiesMap.put(speciality.getSpecialty(), speciality.getId());
-						specialitiesModel.addElement(speciality.getSpecialty());
+						specialtiesMap.put(speciality.getSpeciality(), speciality.getId());
+						specialitiesModel.addElement(speciality.getSpeciality());
 					}
 
 					specialityComboBox.setModel(specialitiesModel);

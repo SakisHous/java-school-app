@@ -50,7 +50,7 @@ public class Speciality {
      *
      * @return the speciality attribute.
      */
-    public String getSpecialty() {
+    public String getSpeciality() {
         return speciality;
     }
 
