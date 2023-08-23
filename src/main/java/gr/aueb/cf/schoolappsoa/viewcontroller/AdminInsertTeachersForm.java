@@ -141,7 +141,7 @@ public class AdminInsertTeachersForm extends JFrame {
 				List<Speciality> specialties;
 				specialtiesMap = new HashMap<>();
 				try{
-					specialties = specialtyService.getAllSpecialties();
+					specialties = specialtyService.getAllSpecialities();
 					specialitiesModel = new DefaultComboBoxModel<>();
 
 					for (Speciality speciality : specialties) {

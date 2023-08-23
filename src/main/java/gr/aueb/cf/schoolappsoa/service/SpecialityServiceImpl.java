@@ -98,8 +98,8 @@ public class SpecialityServiceImpl implements ISpecialityService {
      *                                related with {@link gr.aueb.cf.schoolappsoa.dao.SpecialityDAOImpl}.
      */
     @Override
-    public List<Speciality> getAllSpecialties() throws SpecialityDAOException {
-        return specialtyDAO.getAllSpecialty();
+    public List<Speciality> getAllSpecialities() throws SpecialityDAOException {
+        return specialtyDAO.getAllSpeciality();
     }
 
     /**

@@ -15,7 +15,7 @@ public interface ISpecialityService {
 
     void deleteSpecialty(long id) throws SpecialityDAOException, SpecialityNotFoundException;
 
-    List<Speciality> getAllSpecialties() throws SpecialityDAOException;
+    List<Speciality> getAllSpecialities() throws SpecialityDAOException;
 
     Speciality getSpecialtyById(long id) throws SpecialityDAOException;
 }

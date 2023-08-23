@@ -108,7 +108,7 @@ public class AdminUpdateDeleteTeachersForm extends JFrame {
 
 					// For the Combo Boxes we need all Specialties and Usernames in the DB
 					// Updating a Teacher, admin can update specialty and username
-					specialties = specialtyService.getAllSpecialties();
+					specialties = specialtyService.getAllSpecialities();
 					specialitiesModel = new DefaultComboBoxModel<>();
 
 					for (Speciality speciality : specialties) {
