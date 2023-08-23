@@ -99,7 +99,7 @@ public class SpecialityServiceImpl implements ISpecialityService {
      */
     @Override
     public List<Speciality> getAllSpecialities() throws SpecialityDAOException {
-        return specialtyDAO.getAllSpeciality();
+        return specialtyDAO.getAll();
     }
 
     /**

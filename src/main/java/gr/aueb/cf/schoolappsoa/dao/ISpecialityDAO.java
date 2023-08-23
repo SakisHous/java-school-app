@@ -15,6 +15,6 @@ public interface ISpecialityDAO {
     Speciality insert(Speciality speciality) throws SpecialityDAOException;
     Speciality update(Speciality speciality) throws SpecialityDAOException;
     void delete(Long id) throws SpecialityDAOException;
-    List<Speciality> getAllSpeciality() throws SpecialityDAOException;
+    List<Speciality> getAll() throws SpecialityDAOException;
     Speciality getById(Long id) throws SpecialityDAOException;
 }

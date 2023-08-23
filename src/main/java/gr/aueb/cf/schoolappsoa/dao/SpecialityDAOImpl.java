@@ -111,7 +111,7 @@ public class SpecialityDAOImpl implements ISpecialityDAO {
      *                                exception to {@link SQLException} will be thrown.
      */
     @Override
-    public List<Speciality> getAllSpeciality() throws SpecialityDAOException {
+    public List<Speciality> getAll() throws SpecialityDAOException {
         String sql = "SELECT * FROM SPECIALITIES";
         List<Speciality> specialties = new ArrayList<>();
         ResultSet rs = null;
