@@ -37,11 +37,29 @@ public class City {
     }
 
     /**
+     * Setter for the city's id.
+     *
+     * @param id is the city's pk.
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
      * Getter for the city name.
      *
      * @return string the city name.
      */
     public String getCity() {
         return city;
+    }
+
+    /**
+     * Setter for city's name.
+     *
+     * @param city a string with city's name.
+     */
+    public void setCity(String city) {
+        this.city = city;
     }
 }
