@@ -69,7 +69,7 @@ public class StudentDAOImpl implements IStudentDAO {
      */
     @Override
     public Student update(Student student) throws StudentDAOException {
-        String sql = "UPDATE STUDENTS FIRSTNAME = ?, LASTNAME = ?, GENDER = ?, BIRTH_DATE = ?, CITY_ID = ?, USER_ID = ? WHERE ID = ?";
+        String sql = "UPDATE STUDENTS SET FIRSTNAME = ?, LASTNAME = ?, GENDER = ?, BIRTH_DATE = ?, CITY_ID = ?, USER_ID = ? WHERE ID = ?";
 
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
