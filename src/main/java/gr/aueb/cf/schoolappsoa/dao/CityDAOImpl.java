@@ -109,7 +109,7 @@ public class CityDAOImpl implements ICityDAO {
      *                          exception to {@link SQLException} will be thrown.
      */
     @Override
-    public List<City> getAllCities() throws CityDAOException {
+    public List<City> getAll() throws CityDAOException {
         String sql = "SELECT * FROM CITIES";
         List<City> cities = new ArrayList<>();
         ResultSet rs = null;

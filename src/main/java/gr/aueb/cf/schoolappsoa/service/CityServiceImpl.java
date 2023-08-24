@@ -101,7 +101,7 @@ public class CityServiceImpl implements ICityService {
      */
     @Override
     public List<City> getAllCities() throws CityDAOException {
-        return cityDAO.getAllCities();
+        return cityDAO.getAll();
     }
 
     /**
