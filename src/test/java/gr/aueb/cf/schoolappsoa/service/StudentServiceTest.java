@@ -167,7 +167,7 @@ public class StudentServiceTest {
      * @throws StudentDAOException      is a wrapper exception to {@link SQLException}
      *                                  and handles errors for {@link Student} Entity.
      * @throws StudentNotFoundException this exception is thrown for updating a
-     *                                  student that does not exist in the database.
+     *                                  student that does not exist in the db.
      * @throws CityDAOException         is a wrapper exception to {@link SQLException}
      *                                  and handles errors for {@link City} Entity.
      * @throws UserDAOException         is a wrapper exception to {@link SQLException}
