@@ -15,6 +15,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class StudentTest {
 
+    /**
+     * This method tests the getters and setters for {@link Student} class.
+     *
+     * @throws ParseException when the format of the date is invalid.
+     */
     @Test
     void gettersSetters() throws ParseException {
         User user = new User(1L, "user-01", "123456");
@@ -41,6 +46,11 @@ public class StudentTest {
         assertEquals(student.getUser().getUsername(), "user-01");
     }
 
+    /**
+     * This method tests the overloaded constructor of the {@link Student} class.
+     *
+     * @throws ParseException when the format of the date is invalid.
+     */
     @Test
     void overloadedConstructor() throws ParseException {
         User user = new User(1L, "user-01", "123456");
