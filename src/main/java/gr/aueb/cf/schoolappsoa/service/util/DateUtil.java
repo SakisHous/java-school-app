@@ -3,6 +3,8 @@ package gr.aueb.cf.schoolappsoa.service.util;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -21,7 +23,7 @@ public class DateUtil {
 
         @Override
         protected DateFormat initialValue() {
-            return new SimpleDateFormat("dd-MM-YYYY");
+            return new SimpleDateFormat("dd-MM-yyyy");
         }
     };
 
@@ -37,7 +39,8 @@ public class DateUtil {
      *
      * @param dateStr date in String format.
      * @return a Date object of java.util.Date class.
-     * @throws ParseException
+     * @throws ParseException this exception is occurred when
+     *                        parsing an invalid date format
      */
     public static Date toDate(String dateStr) throws ParseException {
         return getDateFormat().parse(dateStr);
@@ -80,5 +83,18 @@ public class DateUtil {
      */
     public static DateFormat getDateFormat() {
         return dateFormat.get();
+    }
+
+    /**
+     * This method converts a String date to {@link java.sql.Date}.
+     *
+     * @param dateString a string date in format dd-MM-yyyy
+     * @return the date in {@link java.sql.Date} object.
+     */
+    public static java.sql.Date stringToSqlDate(String dateString) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate localDate = LocalDate.parse(dateString, formatter);
+
+        return java.sql.Date.valueOf(localDate);
     }
 }
