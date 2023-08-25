@@ -31,3 +31,6 @@ In addition, in the viewcontroller there are some simple validations for the for
 
 Lastly, for login and register passwords are hashed using the jBcrypt library. There is a utility class where utility methods has declared to ease this operation
 of hashing passwords and checking hashed passwords.
+
+<ins>Unit Tests:</ins><br>
+In addition, there are [unit tests](src/test) for the most important classes in the application.
