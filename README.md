@@ -16,7 +16,7 @@ Each table in the database is presented as entity in the Model package of this a
 
 
 The application uses MySQL 8 database system for storing the information and in Java the JDPC driver for MySQL is the mysql-connector-j. In the pom.xml file they are listed all dependencies for this app where Maven manages dependencies.<br>
-The connection with the database is performed with an utiliy class where it is used to open and close an connection.
+The connection with the database is performed with an utility class where it is used to open and close an connection.
 
 The design pattern is a MVC-like pattern where the controller and view are not seperated.
 * First, it has an Data Access Object Layer where it has Public APIs and implementations of these APIs. This layer is communicate with the database.
